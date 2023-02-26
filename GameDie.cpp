@@ -47,18 +47,18 @@ vector <int> GameDie::get_distribution(){
 
 vector<double> GameDie::get_percentages(){
   int total =0;
-  for( int i=0; i < counter.size(); i++){
-    total += counter[i];
+  for( int i=0; i < roll_counter.size(); i++){
+    total += roll_counter[i];
   }
-  vector <double> percentages( counter.size() );
+  vector <double> percentages( roll_counter.size() );
 
   if( total == 0 ){
     return percentages;
   }
   else{
-    for(int i=0; i < counter.size(); i++ ){
-      percentages[i] = counter[i]*1.0 / total;
+    for(int i=0; i < roll_counter.size(); i++ ){
+      percentages[i] = roll_counter[i]*1.0 / total;
     }
   }
-  return percentages;  
+  return percentages;
 }
