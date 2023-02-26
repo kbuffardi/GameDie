@@ -13,7 +13,7 @@ class GameDie
    vector <int> get_distribution();
 
   private:
-   vector <int> roll_counter;
+   vector <int> counter;
    const static int FACES = 6;
 };
 

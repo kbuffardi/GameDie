@@ -7,10 +7,10 @@
 GameDie::GameDie()
 {
     srand(time(NULL));
-    roll_counter.resize(FACES);
+    counter.resize(FACES);
 
     for(int i=0; i<FACES; i++)
-      roll_counter[i] = 0;
+      counter[i] = 0;
 }
 
 //overloaded constructor
@@ -18,14 +18,14 @@ GameDie::GameDie(unsigned int num)
 {
     if( num == 0 )
     {
-        roll_counter.resize(FACES);
+        counter.resize(FACES);
     }
     else{
-        roll_counter.resize(num);
+        counter.resize(num);
     }
     for(int i=0; i<FACES; i++)
     {
-        roll_counter[i] = 0;
+        counter[i] = 0;
     }
 
 }
@@ -34,8 +34,8 @@ GameDie::GameDie(unsigned int num)
 // (inclusive) and return it
 int GameDie::roll()
 {
-    int roll = rand() % roll_counter.size();
-    roll_counter[roll]++;
+    int roll = rand() % counter.size();
+    counter[roll]++;
     return roll + 1;
 }
 
